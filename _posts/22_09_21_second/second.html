@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["box_plot.png","cassure.png","cons_finale.png","cons_finale_apres.png","cons_finale_avant.png","Inputs/bd.xlsx","second_files/anchor-4.2.2/anchor.min.js","second_files/bowser-1.9.3/bowser.min.js","second_files/distill-2.2.21/template.v2.js","second_files/figure-html5/unnamed-chunk-10-1.png","second_files/figure-html5/unnamed-chunk-11-1.png","second_files/figure-html5/unnamed-chunk-13-1.png","second_files/figure-html5/unnamed-chunk-3-1.png","second_files/figure-html5/unnamed-chunk-4-1.png","second_files/figure-html5/unnamed-chunk-5-1.png","second_files/figure-html5/unnamed-chunk-7-1.png","second_files/figure-html5/unnamed-chunk-8-1.png","second_files/figure-html5/unnamed-chunk-9-1.png","second_files/header-attrs-2.10.6/header-attrs.js","second_files/jquery-3.6.0/jquery-3.6.0.js","second_files/jquery-3.6.0/jquery-3.6.0.min.js","second_files/jquery-3.6.0/jquery-3.6.0.min.map","second_files/popper-2.6.0/popper.min.js","second_files/tippy-6.2.7/tippy-bundle.umd.min.js","second_files/tippy-6.2.7/tippy-light-border.css","second_files/tippy-6.2.7/tippy.css","second_files/tippy-6.2.7/tippy.umd.min.js","second_files/webcomponents-2.0.0/webcomponents.js","temp.html","temp_files/dygraphs-1.1.1/dygraph-combined-dev.js","temp_files/dygraphs-1.1.1/dygraph-combined.js","temp_files/dygraphs-1.1.1/dygraph.css","temp_files/dygraphs-1.1.1/shapes.js","temp_files/dygraphs-binding-1.1.1.6/dygraphs.js","temp_files/htmlwidgets-1.5.4/htmlwidgets.js","temp_files/jquery-1.11.1/AUTHORS.txt","temp_files/jquery-1.11.1/jquery.min.js","temp_files/moment-2.8.4/moment-timezone-with-data.js","temp_files/moment-2.8.4/moment.js","temp_files/moment-fquarter-1.0.0/moment-fquarter.min.js","temp_files/moment-timezone-0.2.5/moment-timezone-with-data.js","temp_files/moment-timezone-0.2.5/moment.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1435,7 +1435,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="second_files/header-attrs-2.10.6/header-attrs.js"></script>
+  <script src="second_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
   <script src="second_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="second_files/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+  <script src="second_files/dygraphs-1.1.1/dygraph-combined.js"></script>
+  <script src="second_files/dygraphs-1.1.1/shapes.js"></script>
+  <script src="second_files/moment-2.8.4/moment.js"></script>
+  <script src="second_files/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+  <script src="second_files/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+  <script src="second_files/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
   <script src="second_files/popper-2.6.0/popper.min.js"></script>
   <link href="second_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="second_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -1478,8 +1486,128 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<p>ceci est mon deuxième blog</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>ceci est mon deuxième blog Skip to content Search or jump to… Pull requests Issues Marketplace Explore</p>
+<p><span class="citation" data-cites="Priestleymuhindo">@Priestleymuhindo</span> Priestleymuhindo / memoire-pacifique Public generated from jtr13/bookdown-template 1 00 Code Issues Pull requests Actions Projects Wiki Security Insights Settings memoire-pacifique/02-visualisation.Rmd <span class="citation" data-cites="Priestleymuhindo">@Priestleymuhindo</span> Priestleymuhindo ajout Latest commit 2433119 4 days ago History 1 contributor 304 lines (238 sloc) 8.5 KB</p>
+<h1 id="graphique-de-visualisation">graphique de visualisation</h1>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h1 id="recherche-de-la-transformation-des-données">Recherche de la transformation des données</h1>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>##Vérification si la série ne contient pas des valeurs abrantes</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="second_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+<div id="htmlwidget-57404e18f55e80b0b86d" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-57404e18f55e80b0b86d">{"x":{"attrs":{"title":"Allure de la courbe par la transformation de Box Cox","labels":["month","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"colors":["red","red"],"series":{"V1":{"axis":"y","stepPlot":false,"fillGraph":true}}},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z","2018-07-01T00:00:00.000Z","2018-08-01T00:00:00.000Z","2018-09-01T00:00:00.000Z","2018-10-01T00:00:00.000Z","2018-11-01T00:00:00.000Z","2018-12-01T00:00:00.000Z","2019-01-01T00:00:00.000Z","2019-02-01T00:00:00.000Z","2019-03-01T00:00:00.000Z","2019-04-01T00:00:00.000Z","2019-05-01T00:00:00.000Z","2019-06-01T00:00:00.000Z","2019-07-01T00:00:00.000Z","2019-08-01T00:00:00.000Z","2019-09-01T00:00:00.000Z","2019-10-01T00:00:00.000Z","2019-11-01T00:00:00.000Z","2019-12-01T00:00:00.000Z"],[0.99996863184319,0.999933363293306,0.999936822565123,0.999934926186257,0.999984777486748,1.0000010657379,0.999978942613359,0.999948515929596,0.999926615473385,0.999957659723398,0.99999349646964,0.999978689091951,1.00001429781654,1.00001292426064,0.999969462388956,0.999938612192105,0.999972627786416,0.999962382216648,0.999918852643161,0.999888004094992,0.999882493022026,0.999885830610508,0.999908606270561,0.99990342546794,0.999918408606283,0.999942943734003,0.999871403965481,0.999886082579445,0.99994631064207,0.999946976899454,0.99990857834897,0.999914711923145,0.999932322508401,0.999936880402128,0.999936745374133,0.999932956947757,0.999903987442265,0.999879691202709,0.999875933029305,0.999919391963079,0.999943347873632,0.999946527930651,0.999899292974527,0.999890916933374,0.999859105659957,0.999868526561158,0.999897406132653,0.999905158646943,0.99990312821239,0.99988181889451,0.999880532625682,0.999869848305266,0.999913009667448,0.999960276050328,0.999952374776859,0.999928242195691,0.99990952247926,0.999902049548123,0.999891800296154,0.999889541223747]]},"evals":[],"jsHooks":[]}</script>
+</div>
+<h2 id="evolution-de-la-consommation-des-antipaludéens">Evolution de la Consommation des antipaludéens</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="second_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
+</div>
+<p>On peut facilement isoler ici deux périodes ,celle d’avant janvier 2016 et celle d’après où les tendances sont respectivement à la hausse puis à la baisse . Nous devons le confirmer par un test d’éxogénéité (en l’occurence de test snht) ## Test de Pettit et de CUSUM d’exogénéité pour la détection des valeurs de changement structurel</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+    OLS-based CUSUM test
+
+data:  ocus
+S0 = 2.4662, p-value = 1.042e-05</code></pre>
+<pre><code>Class &#39;cpt&#39; : Changepoint Object
+       ~~   : S4 class containing 12 slots with names
+              cpttype date version data.set method test.stat pen.type pen.value minseglen cpts ncpts.max param.est 
+
+Created on  : Fri Sep 03 15:14:26 2021 
+
+summary(.)  :
+----------
+Created Using changepoint version 2.2.2 
+Changepoint type      : Change in mean 
+Method of analysis    : AMOC 
+Test Statistic  : Normal 
+Type of penalty       : MBIC with value, 12.28303 
+Minimum Segment Length : 1 
+Maximum no. of cpts   : 1 
+Changepoint Locations : 18 </code></pre>
+<p><img src="second_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+     Optimal 2-segment partition: 
+
+Call:
+breakpoints.formula(formula = cons ~ 1)
+
+Breakpoints at observation number:
+18 
+
+Corresponding to breakdates:
+0.3 </code></pre>
+<pre><code>
+    Pettitt&#39;s test for single change-point detection
+
+data:  consommation_totale
+U* = 660, p-value = 1.356e-05
+alternative hypothesis: two.sided
+sample estimates:
+probable change point at time K 
+                             18 </code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="second_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+</div>
+<h2 id="consommation-des-antipaludéens-par-tranche-dâge">Consommation des antipaludéens par tranche d’âge</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="second_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
+</div>
+` # Toutes
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="second_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
+<div id="htmlwidget-91a8424d460301751c10" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-91a8424d460301751c10">{"x":{"attrs":{"title":"Evolution de la Consommation des antipaludéens à Rutshuru de 2015 à 2021","labels":["month","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"colors":["blue","blue"],"series":{"V1":{"axis":"y","stepPlot":false,"fillGraph":true}}},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z","2018-07-01T00:00:00.000Z","2018-08-01T00:00:00.000Z","2018-09-01T00:00:00.000Z","2018-10-01T00:00:00.000Z","2018-11-01T00:00:00.000Z","2018-12-01T00:00:00.000Z","2019-01-01T00:00:00.000Z","2019-02-01T00:00:00.000Z","2019-03-01T00:00:00.000Z","2019-04-01T00:00:00.000Z","2019-05-01T00:00:00.000Z","2019-06-01T00:00:00.000Z","2019-07-01T00:00:00.000Z","2019-08-01T00:00:00.000Z","2019-09-01T00:00:00.000Z","2019-10-01T00:00:00.000Z","2019-11-01T00:00:00.000Z","2019-12-01T00:00:00.000Z"],[9342,7028,7203,7106,11000,13399,10337,7865,6710,8474,12166,10310,16284,15928,9415,7297,9704,8827,6378,5330,5178,5269,5987,5807,6360,7535,4897,5276,7731,7771,5986,6214,6977,7206,7199,7008,5826,5104,5008,6400,7558,7744,5671,5414,4619,4829,5611,5866,5797,5160,5126,4860,6149,8666,8111,6784,6020,5761,5440,5374]]},"evals":[],"jsHooks":[]}</script>
+</div>
+<h1 id="avant-2016">Avant 2016</h1>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="second_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+<div id="htmlwidget-8b0ce7f3f5304fd2a88c" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8b0ce7f3f5304fd2a88c">{"x":{"attrs":{"title":"Evolution de la Consommation des antipaludéens à Rutshuru de 2015 à 2016","labels":["month","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"colors":["blue","blue"],"series":{"V1":{"axis":"y","stepPlot":false,"fillGraph":true}},"showRangeSelector":true,"dateWindow":["2015-01-01T00:00:00.000Z","2016-01-01T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z","2018-07-01T00:00:00.000Z","2018-08-01T00:00:00.000Z","2018-09-01T00:00:00.000Z","2018-10-01T00:00:00.000Z","2018-11-01T00:00:00.000Z","2018-12-01T00:00:00.000Z","2019-01-01T00:00:00.000Z","2019-02-01T00:00:00.000Z","2019-03-01T00:00:00.000Z","2019-04-01T00:00:00.000Z","2019-05-01T00:00:00.000Z","2019-06-01T00:00:00.000Z","2019-07-01T00:00:00.000Z","2019-08-01T00:00:00.000Z","2019-09-01T00:00:00.000Z","2019-10-01T00:00:00.000Z","2019-11-01T00:00:00.000Z","2019-12-01T00:00:00.000Z"],[9342,7028,7203,7106,11000,13399,10337,7865,6710,8474,12166,10310,16284,15928,9415,7297,9704,8827,6378,5330,5178,5269,5987,5807,6360,7535,4897,5276,7731,7771,5986,6214,6977,7206,7199,7008,5826,5104,5008,6400,7558,7744,5671,5414,4619,4829,5611,5866,5797,5160,5126,4860,6149,8666,8111,6784,6020,5761,5440,5374]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<h1 id="après-2016">Après 2016</h1>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="second_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
+<div id="htmlwidget-fc666f6d79e280541a16" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fc666f6d79e280541a16">{"x":{"attrs":{"title":"Evolution de la Consommation des antipaludéens à Rutshuru de 2016 à 2019","labels":["month","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"colors":["blue","blue"],"series":{"V1":{"axis":"y","stepPlot":false,"fillGraph":true}},"showRangeSelector":true,"dateWindow":["2016-01-01T00:00:00.000Z","2019-01-01T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z","2018-07-01T00:00:00.000Z","2018-08-01T00:00:00.000Z","2018-09-01T00:00:00.000Z","2018-10-01T00:00:00.000Z","2018-11-01T00:00:00.000Z","2018-12-01T00:00:00.000Z","2019-01-01T00:00:00.000Z","2019-02-01T00:00:00.000Z","2019-03-01T00:00:00.000Z","2019-04-01T00:00:00.000Z","2019-05-01T00:00:00.000Z","2019-06-01T00:00:00.000Z","2019-07-01T00:00:00.000Z","2019-08-01T00:00:00.000Z","2019-09-01T00:00:00.000Z","2019-10-01T00:00:00.000Z","2019-11-01T00:00:00.000Z","2019-12-01T00:00:00.000Z"],[9342,7028,7203,7106,11000,13399,10337,7865,6710,8474,12166,10310,16284,15928,9415,7297,9704,8827,6378,5330,5178,5269,5987,5807,6360,7535,4897,5276,7731,7771,5986,6214,6977,7206,7199,7008,5826,5104,5008,6400,7558,7744,5671,5414,4619,4829,5611,5866,5797,5160,5126,4860,6149,8666,8111,6784,6020,5761,5440,5374]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<h1 id="test-de-tendance-de-mann-kendall">Test de tendance de Mann kendall</h1>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>tau = -0.382, 2-sided pvalue =1.6691e-05</code></pre>
+<pre><code>tau = -0.5, 2-sided pvalue =2.209e-05</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="second_files/figure-html5/unnamed-chunk-13-1.png" width="624" /></p>
+<div id="htmlwidget-fd0b688ae48d4bd56a56" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fd0b688ae48d4bd56a56">{"x":{"attrs":{"title":"Evolution de la Consommation des antipaludéens à Rutshuru de 2015 à 2021","labels":["month","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"colors":["blue","blue"],"series":{"V1":{"axis":"y","stepPlot":false,"fillGraph":false}}},"scale":"monthly","annotations":[],"shadings":[{"from":"2015-01-01T00:00:00.000Z","to":"2016-01-01T00:00:00.000Z","color":"#FFE6E6","axis":"x"}],"events":[{"pos":"2016-01-01T00:00:00.000Z","label":"Point de cassure","labelLoc":"bottom","color":"black","strokePattern":[7,3],"axis":"x"}],"format":"date","data":[["2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z","2018-07-01T00:00:00.000Z","2018-08-01T00:00:00.000Z","2018-09-01T00:00:00.000Z","2018-10-01T00:00:00.000Z","2018-11-01T00:00:00.000Z","2018-12-01T00:00:00.000Z","2019-01-01T00:00:00.000Z","2019-02-01T00:00:00.000Z","2019-03-01T00:00:00.000Z","2019-04-01T00:00:00.000Z","2019-05-01T00:00:00.000Z","2019-06-01T00:00:00.000Z","2019-07-01T00:00:00.000Z","2019-08-01T00:00:00.000Z","2019-09-01T00:00:00.000Z","2019-10-01T00:00:00.000Z","2019-11-01T00:00:00.000Z","2019-12-01T00:00:00.000Z"],[9342,7028,7203,7106,11000,13399,10337,7865,6710,8474,12166,10310,16284,15928,9415,7297,9704,8827,6378,5330,5178,5269,5987,5807,6360,7535,4897,5276,7731,7771,5986,6214,6977,7206,7199,7008,5826,5104,5008,6400,7558,7744,5671,5414,4619,4829,5611,5866,5797,5160,5126,4860,6149,8666,8111,6784,6020,5761,5440,5374]]},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>#Test de Dickey Fuller</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  consommation_totale
+Dickey-Fuller = -3.3907, Lag order = 3, p-value = 0.06584
+alternative hypothesis: stationary</code></pre>
+</div>
+<h1 id="différenciation-de-la-série">Différenciation de la série</h1>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

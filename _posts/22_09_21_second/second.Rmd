@@ -19,5 +19,270 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
  ceci est mon deuxième blog
+ Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@Priestleymuhindo 
+Priestleymuhindo
+/
+memoire-pacifique
+Public
+generated from jtr13/bookdown-template
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+memoire-pacifique/02-visualisation.Rmd
+@Priestleymuhindo
+Priestleymuhindo ajout
+Latest commit 2433119 4 days ago
+ History
+ 1 contributor
+304 lines (238 sloc)  8.5 KB
+   
+# graphique de visualisation
+```{r importation des librairies,message=FALSE,warning=FALSE,echo=FALSE}
+library(tidyverse)
+library(readxl)
+library(lubridate)
+library(GGally)
+library(trend)
+library(gridExtra)
+library(tseries)
+library(ggthemes)
+library(khroma)
+library(forecast)
+library(ggh4x)
+library(tsibble)
+library(snht)
+library(xts)
+library(changepoint)
+library(strucchange)
+library(bcp)
+library(dygraphs)
+library(segmented)
+library(webshot)
+library(trend)
+```
+
+```{r base de données,message=FALSE,warning=FALSE,echo=FALSE}
+bd <- read_excel("Inputs/bd.xlsx",sheet = "bd")
+bd <- bd %>% mutate(date=ymd(date))
+```
+
+```{r}
+bd_tsible <- bd %>% pivot_wider(names_from = tranche_age,values_from = consommation:cas_total) %>% as_tsibble()
+bd_tsible<- bd_tsible %>% 
+  mutate(consom_tot=rowSums(across(contains("consommation"))))
+consommation_totale <- ts(bd_tsible$consom_tot,start=c(2015, 1),
+                          end=c(2019, 12),frequency = 12)
+consommation_moins_un <- ts(bd_tsible$`consommation_2-11 mois`,start=c(2015, 1),
+                          end=c(2019, 12),frequency = 12)
+consommation_moins_cinq <- ts(bd_tsible$`consommation_1- 5 ans`,start=c(2015, 1),
+                          end=c(2019, 12),frequency = 12)
+consommation_6_treize <- ts(bd_tsible$`consommation_6-13 ans`,start=c(2015,1),end=c(2019, 12),frequency = 12)
+consommation_14_plus <- ts(bd_tsible$`consommation_14 ans plus`,start=c(2015, 1),
+                          end=c(2019, 12),frequency = 12)
+ts_d <- cbind(consommation_moins_un,consommation_moins_cinq,consommation_6_treize,consommation_totale)
+```
+
+# Recherche de  la transformation des données
+```{r}
+lambda <- BoxCox.lambda(consommation_totale)
+consommation_totale_b <- BoxCox(consommation_totale,lambda)
+```
 
 
+
+
+##Vérification si la série ne contient pas des valeurs abrantes
+
+```{r}
+consommation_totale_b <- BoxCox(consommation_totale,lambda)
+ts_d <- cbind(consommation_totale,consommation_totale_b)
+m <- dygraph(consommation_totale_b, main = "Allure de la courbe par la transformation de Box Cox")%>%
+  dySeries("V1", stepPlot = FALSE, fillGraph = TRUE, color = "red") 
+htmlwidgets::saveWidget(m, "temp.html", selfcontained = FALSE)
+width<- 1080
+height <- 610
+webshot("temp.html", file = "box_plot.png",
+        cliprect = c(10,30,width+50,height+50)
+        ,vwidth = width, vheight = height )
+m
+```
+
+
+## Evolution de la  Consommation des antipaludéens 
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+bd_evol <- bd %>% group_by(date) %>% summarise(consommation=sum(consommation)) %>% ungroup() 
+  bd_evol %>% ggplot()+
+  aes(x=date,y=consommation)+
+  geom_line(color="firebrick")+
+  scale_x_date(
+    date_labels = "%b\n%Y",
+    date_breaks = "4 months",
+    date_minor_breaks = "1 month",
+    guide = guide_axis_minor()
+  )+
+  labs(x="",y="",title = "Evolution de la Consommation des anti-paludéens\n")+
+  theme_clean()+
+  theme(
+    legend.position = "bottom"
+  )
+```
+On peut facilement isoler ici deux périodes ,celle d'avant janvier 2016 et celle d'après où les tendances sont respectivement à la hausse puis à la baisse . 
+Nous devons le confirmer par un test d'éxogénéité (en l'occurence de test snht)
+## Test de Pettit et de CUSUM d'exogénéité pour la détection des valeurs de changement structurel
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+bd_evol <- bd_evol %>% tsibble::as_tsibble() %>% mutate(date=ymd(date))
+cons <- xts(bd_evol$consommation,order.by = bd_evol$date)
+# cpt2 <- cpt.mean(bd_evol$consommation,method = "PELT",penalty = "CROPS",pen.value = c(1,25))
+# summary(cpt2)
+# plot(cpt2,diagnostic=T)
+ocus <- efp(cons~1,type = "OLS-CUSUM")
+sctest(ocus)
+cpt <- cpt.mean(bd_evol$consommation,method = "AMOC")
+cpt 
+fs_ev <- Fstats(consommation_totale~1)
+plot(fs_ev)
+```
+
+
+```{r}
+brp_cons <- breakpoints(cons~1)
+brp_cons
+pettitt.test(consommation_totale)
+```
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+bd_evol <- bd %>% group_by(date) %>% summarise(consommation=sum(consommation)) %>% ungroup() 
+  bd_evol %>% ggplot()+
+  aes(x=date,y=consommation)+
+  geom_line(color="firebrick")+
+    geom_vline(xintercept =as.numeric(bd_evol$consommation[18]))+
+  scale_x_date(
+    date_labels = "%b\n%Y",
+    date_breaks = "4 months",
+    date_minor_breaks = "1 month",
+    guide = guide_axis_minor()
+  )+
+  labs(x="",y="",title = "Evolution de la Consommation des anti-paludéens\n")+
+  theme_clean()+
+  theme(
+    legend.position = "bottom"
+  )
+```
+## Consommation des antipaludéens par tranche d'âge
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+bd %>% ggplot()+
+  aes(x=date,y=consommation,colour=tranche_age)+
+  scale_color_bright()+
+  geom_line()+
+  scale_x_date(
+    date_labels = "%b\n%Y",
+    date_breaks = "4 months",
+    date_minor_breaks = "6 month",
+    guide = guide_axis_minor()
+  )+
+  labs(x="",y="",title = "Evolution de la Consommation des anti-paludéens\n par tranche d'âge")+
+  guides(color=guide_legend(title="tranche d'âge"))+
+  theme_clean()+
+  theme(
+    legend.position = "bottom"
+  )
+```
+
+
+`
+# Toutes
+```{r}
+ts_d <- cbind(consommation_moins_un,consommation_moins_cinq,consommation_6_treize,consommation_totale)
+m <- dygraph(consommation_totale, main = "Evolution de la Consommation des antipaludéens à Rutshuru de 2015 à 2021") %>%
+  dySeries("V1", stepPlot = FALSE, fillGraph = TRUE, color = "blue")
+htmlwidgets::saveWidget(m, "temp.html", selfcontained = FALSE)
+width<- 1080
+height <- 610
+webshot("temp.html", file = "cons_finale.png",
+        cliprect = c(10,30,width+50,height+50)
+        ,vwidth = width, vheight = height )
+m
+```
+
+
+
+
+# Avant 2016
+```{r}
+ts_d <- cbind(consommation_moins_un,consommation_moins_cinq,consommation_6_treize,consommation_totale)
+m <- dygraph(consommation_totale, main = "Evolution de la Consommation des antipaludéens à Rutshuru de 2015 à 2016") %>%
+  dySeries("V1", stepPlot = FALSE, fillGraph = TRUE, color = "blue")
+m <- m %>% dyRangeSelector(dateWindow = c("2015-01-01", "2016-01-01"))
+htmlwidgets::saveWidget(m, "temp.html", selfcontained = FALSE)
+width<- 1080
+height <- 610
+webshot("temp.html", file = "cons_finale_avant.png",
+        cliprect = c(10,30,width+50,height+50)
+        ,vwidth = width, vheight = height )
+m
+```
+
+
+# Après 2016
+
+```{r}
+m <- dygraph(consommation_totale, main = "Evolution de la Consommation des antipaludéens à Rutshuru de 2016 à 2019") %>%
+  dySeries("V1", stepPlot = F, fillGraph = TRUE, color = "blue")
+m <- m %>% dyRangeSelector(dateWindow = c("2016-01-01", "2019-01-01"))
+htmlwidgets::saveWidget(m, "temp.html", selfcontained = FALSE)
+width<- 1080
+height <- 610
+webshot("temp.html", file = "cons_finale_apres.png",
+        cliprect = c(10,30,width+50,height+50)
+        ,vwidth = width, vheight = height )
+m
+```
+# Test de tendance de  Mann kendall 
+```{r}
+Kendall::MannKendall(consommation_totale)
+Kendall::SeasonalMannKendall(consommation_totale)
+```
+```{r}
+presAnnotation <- function(dygraph, x, text) {
+  dygraph %>%
+    dyAnnotation(x, text, attachAtBottom = TRUE, width = 60)
+}
+m <- dygraph(consommation_totale, main = "Evolution de la Consommation des antipaludéens à Rutshuru de 2015 à 2021") %>%
+  dySeries("V1", stepPlot = F, fillGraph = F, color = "blue") %>% 
+  dyShading(from = "2015-1-1", to = "2016-1-1",color = "#FFE6E6") %>% 
+  dyEvent("2016-1-1", "Point de cassure", labelLoc = "bottom")  
+htmlwidgets::saveWidget(m, "temp.html", selfcontained = FALSE)
+width<- 1080
+height <- 610
+webshot("temp.html", file = "cassure.png",
+        cliprect = c(10,30,width+50,height+50)
+        ,vwidth = width, vheight = height )
+m
+```
+#Test de Dickey Fuller
+
+```{r}
+tseries::adf.test(consommation_totale)
+```
+# Différenciation de la série
+```{r}
+ndiffs(consommation_totale)
+```
