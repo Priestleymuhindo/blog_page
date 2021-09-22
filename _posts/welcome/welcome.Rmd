@@ -1,13 +1,10 @@
 ---
-title: "Welcome to Mon blog"
+title: "Bienvenue sur la page de la data science"
 description: |
-  Welcome to our new blog, Mon blog. We hope you enjoy 
-  reading what we have to say!
+  La data-science dans toutes ses facettes,c'est ici!
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: Priestley Muhindo 
+    
 date: 09-22-2021
 output:
   distill::distill_article:
@@ -21,6 +18,6 @@ knitr::opts_chunk$set(echo = FALSE)
 # https://rstudio.github.io/distill/blog.html
 
 ```
-
+ ceci est mon premier blog
 
 

@@ -1,19 +1,19 @@
 [
   {
     "path": "posts/welcome/",
-    "title": "Welcome to Mon blog",
-    "description": "Welcome to our new blog, Mon blog. We hope you enjoy \nreading what we have to say!",
+    "title": "Bienvenue sur la page de la data science",
+    "description": "La data-science dans toutes ses facettes,c'est ici!",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Priestley Muhindo",
+        "url": {}
       }
     ],
     "date": "2021-09-22",
     "categories": [],
-    "contents": "\r\n\r\n\r\n\r\n",
+    "contents": "\r\nceci est mon premier blog\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-09-22T08:14:13+02:00",
-    "input_file": {}
+    "last_modified": "2021-09-22T08:34:20+02:00",
+    "input_file": "welcome.knit.md"
   }
 ]
