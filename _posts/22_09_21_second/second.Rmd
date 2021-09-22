@@ -1,0 +1,23 @@
+---
+title: "Premier Post"
+description: |
+  La data-science dans toutes ses facettes,c'est ici!
+author:
+  - name: Priestley Muhindo 
+    
+date: 09-22-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+
+```
+ ceci est mon deuxième blog
+
+
